@@ -1,0 +1,200 @@
+<html>
+  <head>
+    <meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>实验室平台 学习速通 | wcg的仓库</title>
+<link rel="shortcut icon" href="https://peri0d.github.io/favicon.ico?v=1704557336608">
+<link href="https://cdn.jsdelivr.net/npm/remixicon@2.3.0/fonts/remixicon.css" rel="stylesheet">
+<link rel="stylesheet" href="https://peri0d.github.io/styles/main.css">
+<link rel="alternate" type="application/atom+xml" title="实验室平台 学习速通 | wcg的仓库 - Atom Feed" href="https://peri0d.github.io/atom.xml">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Droid+Serif:400,700">
+
+
+
+    <meta name="description" content="验证学习时长的逻辑是每隔一分钟请求一次，然后学习时长加一分钟
+在实验室平台登录，把代码里cookies的wsess值改成登录后的就可以挂机了
+
+
+代码
+import requests
+import time
+cookies = {
+    ..." />
+    <meta name="keywords" content="小手段" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css">
+    <script src="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.5.1/build/highlight.min.js"></script>
+  </head>
+  <body>
+    <div class="main">
+      <div class="main-content">
+        <div class="site-header">
+  <a href="https://peri0d.github.io">
+  <img class="avatar" src="https://peri0d.github.io/images/avatar.png?v=1704557336608" alt="">
+  </a>
+  <h1 class="site-title">
+    wcg的仓库
+  </h1>
+  <p class="site-description">
+    The quieter you become, the more you can hear
+  </p>
+  <div class="menu-container">
+    
+      
+        <a href="/" class="menu">
+          首页
+        </a>
+      
+    
+      
+        <a href="/archives" class="menu">
+          归档
+        </a>
+      
+    
+      
+        <a href="/tags" class="menu">
+          标签
+        </a>
+      
+    
+      
+        <a href="/about" class="menu">
+          关于
+        </a>
+      
+    
+  </div>
+  <div class="social-container">
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+  </div>
+</div>
+
+        <div class="post-detail">
+          <article class="post">
+            <h2 class="post-title">
+              实验室平台 学习速通
+            </h2>
+            <div class="post-info">
+              <span>
+                2023-11-27
+              </span>
+              <span>
+                1 min read
+              </span>
+              
+                <a href="https://peri0d.github.io/OMUqOK6zZ/" class="post-tag">
+                  # 小手段
+                </a>
+              
+            </div>
+            
+            <div class="post-content-wrapper">
+              <div class="post-content" v-pre>
+                <p>验证学习时长的逻辑是每隔一分钟请求一次，然后学习时长加一分钟</p>
+<p>在实验室平台登录，把代码里cookies的wsess值改成登录后的就可以挂机了<br>
+<img src="https://peri0d.github.io/post-images/1701092116836.png" alt="" loading="lazy"></p>
+<!-- more -->
+<p>代码</p>
+<pre><code class="language-python">import requests
+import time
+cookies = {
+    'wsess': 'eg2ccellt5s7cj9dcvrumgdo04',
+}
+while True:
+    headers = {
+        'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:109.0) Gecko/20100101 Firefox/118.0',
+        'Accept': '*/*',
+        'Accept-Language': 'zh-CN,zh;q=0.8,zh-TW;q=0.7,zh-HK;q=0.5,en-US;q=0.3,en;q=0.2',
+        # 'Accept-Encoding': 'gzip, deflate',
+        'Content-Type': 'application/x-www-form-urlencoded; charset=UTF-8',
+        'X-Requested-With': 'XMLHttpRequest',
+        'Origin': 'http://labexamen.gzhu.edu.cn',
+        'Connection': 'keep-alive',
+        'Referer': 'http://labexamen.gzhu.edu.cn/redir.php?catalog_id=134&amp;object_id=16097',
+        # 'Cookie': 'wsess=pfm9r9m9bflctvbgdokpvhigl7',
+    }
+
+    data = {
+        'cmd': 'xuexi_online',
+    }
+
+    response = requests.post('http://labexamen.gzhu.edu.cn/exam_xuexi_online.php', cookies=cookies, headers=headers, data=data)
+
+    print(response.text)
+    time.sleep(60)
+</code></pre>
+
+              </div>
+              <div class="toc-container">
+                
+              </div>
+            </div>
+          </article>
+        </div>
+
+        
+
+        
+
+        <div class="site-footer">
+  Powered by <a href="https://github.com/getgridea/gridea" target="_blank">Gridea</a>
+  <a class="rss" href="https://peri0d.github.io/atom.xml" target="_blank">
+    <i class="ri-rss-line"></i> RSS
+  </a>
+</div>
+
+      </div>
+    </div>
+
+    <script>
+      hljs.initHighlightingOnLoad()
+
+      let mainNavLinks = document.querySelectorAll(".markdownIt-TOC a");
+
+      // This should probably be throttled.
+      // Especially because it triggers during smooth scrolling.
+      // https://lodash.com/docs/4.17.10#throttle
+      // You could do like...
+      // window.addEventListener("scroll", () => {
+      //    _.throttle(doThatStuff, 100);
+      // });
+      // Only not doing it here to keep this Pen dependency-free.
+
+      window.addEventListener("scroll", event => {
+        let fromTop = window.scrollY;
+
+        mainNavLinks.forEach((link, index) => {
+          let section = document.getElementById(decodeURI(link.hash).substring(1));
+          let nextSection = null
+          if (mainNavLinks[index + 1]) {
+            nextSection = document.getElementById(decodeURI(mainNavLinks[index + 1].hash).substring(1));
+          }
+          if (section.offsetTop <= fromTop) {
+            if (nextSection) {
+              if (nextSection.offsetTop > fromTop) {
+                link.classList.add("current");
+              } else {
+                link.classList.remove("current");    
+              }
+            } else {
+              link.classList.add("current");
+            }
+          } else {
+            link.classList.remove("current");
+          }
+        });
+      });
+
+    </script>
+  </body>
+</html>

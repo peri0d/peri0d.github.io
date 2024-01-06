@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+    <id>https://peri0d.github.io</id>
+    <title>wcg的仓库</title>
+    <updated>2024-01-06T16:09:03.261Z</updated>
+    <generator>https://github.com/jpmonette/feed</generator>
+    <link rel="alternate" href="https://peri0d.github.io"/>
+    <link rel="self" href="https://peri0d.github.io/atom.xml"/>
+    <subtitle>The quieter you become, the more you can hear</subtitle>
+    <logo>https://peri0d.github.io/images/avatar.png</logo>
+    <icon>https://peri0d.github.io/favicon.ico</icon>
+    <rights>All rights reserved 2024, wcg的仓库</rights>
+    <entry>
+        <title type="html"><![CDATA[关于]]></title>
+        <id>https://peri0d.github.io/about/</id>
+        <link href="https://peri0d.github.io/about/">
+        </link>
+        <updated>2023-11-27T13:38:58.000Z</updated>
+        <content type="html"><![CDATA[<blockquote>
+<p>把自己写的东西做个合集</p>
+</blockquote>
+<h1 id="github">Github</h1>
+<ul>
+<li><a href="https://github.com/peri0d">My repositories</a></li>
+</ul>
+<h1 id="write-up">write up</h1>
+<ul>
+<li><a href="https://peri0dctf.gitbook.io/buuojwp/">BuuOJ合集</a></li>
+</ul>
+<h1 id="先知社区">先知社区</h1>
+<ul>
+<li><a href="https://xz.aliyun.com/t/13229">pocsuite3部分源码浅析 </a></li>
+<li><a href="https://xz.aliyun.com/t/6718">详解PHP反序列化中的字符逃逸 </a></li>
+<li><a href="https://xz.aliyun.com/t/6628">HarekazeCTF2019 web </a></li>
+<li><a href="https://xz.aliyun.com/t/6522">Joomla 3.4.6 RCE 分析 </a></li>
+<li><a href="https://xz.aliyun.com/t/6333">code-breaking全部题解及知识拓展 </a></li>
+<li><a href="https://xz.aliyun.com/t/6265">code-breaking picklecode中对signed_cookies引擎分析 </a></li>
+<li><a href="https://xz.aliyun.com/t/6059">Laravel 5.8 RCE 分析 </a></li>
+<li><a href="https://xz.aliyun.com/t/5927">De1CTF ssrf_me 的三种解法 </a></li>
+<li><a href="https://xz.aliyun.com/t/5558">2019CISCN华南线下两道web复现 </a></li>
+</ul>
+<h1 id="安全客">安全客</h1>
+<ul>
+<li><a href="https://www.anquanke.com/post/id/231177">247CTF的9个web题目分析</a></li>
+<li><a href="https://www.anquanke.com/post/id/217689">flask_caching中的pickle反序列化问题</a></li>
+</ul>
+<h1 id="sec-in">Sec-IN</h1>
+<ul>
+<li><a href="https://www.sec-in.com/article/141">php反序列化那些事</a></li>
+</ul>
+<h1 id="合天网安">合天网安</h1>
+<ul>
+<li><a href="https://mp.weixin.qq.com/s/NJyIdw73SVpq8cYmlbe25g">Vulnhub靶机Five86-2详细解析</a></li>
+<li><a href="https://mp.weixin.qq.com/s/3mO2tJeU8qyWJnyARX960w">Vulnhub靶机Five86-1详细解析</a></li>
+<li><a href="https://mp.weixin.qq.com/s/aPxB8SSMBNw-HwLZL5bmWA">HexionCTF web&amp;crypto&amp;misc题目分析</a></li>
+</ul>
+]]></content>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[实验室平台 学习速通]]></title>
+        <id>https://peri0d.github.io/shi-yan-shi-ping-tai-xue-xi-su-tong/</id>
+        <link href="https://peri0d.github.io/shi-yan-shi-ping-tai-xue-xi-su-tong/">
+        </link>
+        <updated>2023-11-27T13:27:21.000Z</updated>
+        <summary type="html"><![CDATA[<p>验证学习时长的逻辑是每隔一分钟请求一次，然后学习时长加一分钟</p>
+<p>在实验室平台登录，把代码里cookies的wsess值改成登录后的就可以挂机了<br>
+<img src="https://peri0d.github.io/post-images/1701092116836.png" alt="" loading="lazy"></p>
+]]></summary>
+        <content type="html"><![CDATA[<p>验证学习时长的逻辑是每隔一分钟请求一次，然后学习时长加一分钟</p>
+<p>在实验室平台登录，把代码里cookies的wsess值改成登录后的就可以挂机了<br>
+<img src="https://peri0d.github.io/post-images/1701092116836.png" alt="" loading="lazy"></p>
+<!-- more -->
+<p>代码</p>
+<pre><code class="language-python">import requests
+import time
+cookies = {
+    'wsess': 'eg2ccellt5s7cj9dcvrumgdo04',
+}
+while True:
+    headers = {
+        'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:109.0) Gecko/20100101 Firefox/118.0',
+        'Accept': '*/*',
+        'Accept-Language': 'zh-CN,zh;q=0.8,zh-TW;q=0.7,zh-HK;q=0.5,en-US;q=0.3,en;q=0.2',
+        # 'Accept-Encoding': 'gzip, deflate',
+        'Content-Type': 'application/x-www-form-urlencoded; charset=UTF-8',
+        'X-Requested-With': 'XMLHttpRequest',
+        'Origin': 'http://labexamen.gzhu.edu.cn',
+        'Connection': 'keep-alive',
+        'Referer': 'http://labexamen.gzhu.edu.cn/redir.php?catalog_id=134&amp;object_id=16097',
+        # 'Cookie': 'wsess=pfm9r9m9bflctvbgdokpvhigl7',
+    }
+
+    data = {
+        'cmd': 'xuexi_online',
+    }
+
+    response = requests.post('http://labexamen.gzhu.edu.cn/exam_xuexi_online.php', cookies=cookies, headers=headers, data=data)
+
+    print(response.text)
+    time.sleep(60)
+</code></pre>
+]]></content>
+    </entry>
+</feed>
