@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+    <id>https://peri0d.github.io</id>
+    <title></title>
+    <updated>2024-11-28T10:45:43.868Z</updated>
+    <generator>https://github.com/jpmonette/feed</generator>
+    <link rel="alternate" href="https://peri0d.github.io"/>
+    <link rel="self" href="https://peri0d.github.io/atom.xml"/>
+    <subtitle>一命二运三风水,四积阴德五读书,六名七相八敬神,九交贵人十养生</subtitle>
+    <logo>https://peri0d.github.io/images/avatar.png</logo>
+    <icon>https://peri0d.github.io/favicon.ico</icon>
+    <rights>All rights reserved 2024, </rights>
+    <entry>
+        <title type="html"><![CDATA[关于]]></title>
+        <id>https://peri0d.github.io/post/about/</id>
+        <link href="https://peri0d.github.io/post/about/">
+        </link>
+        <updated>2024-11-28T09:10:09.000Z</updated>
+        <content type="html"><![CDATA[<p>把自己写的东西做个合集</p>
+<h1 id="先知社区">先知社区</h1>
+<ul>
+<li><a href="https://xz.aliyun.com/t/13229">pocsuite3部分源码浅析</a></li>
+<li><a href="https://xz.aliyun.com/t/6718">详解PHP反序列化中的字符逃逸</a></li>
+<li><a href="https://xz.aliyun.com/t/6628">HarekazeCTF2019 web</a></li>
+<li><a href="https://xz.aliyun.com/t/6522">Joomla 3.4.6 RCE 分析</a></li>
+<li><a href="https://xz.aliyun.com/t/6333">code-breaking全部题解及知识拓展</a></li>
+<li><a href="%22https://xz.aliyun.com/t/6265">code-breaking picklecode中对signed_cookies引擎分析</a></li>
+<li><a href="https://xz.aliyun.com/t/6059">Laravel 5.8 RCE 分析</a></li>
+<li><a href="https://xz.aliyun.com/t/5927">De1CTF ssrf_me 的三种解法</a></li>
+<li><a href="https://xz.aliyun.com/t/5558">2019CISCN华南线下两道web复现</a></li>
+</ul>
+<h1 id="安全客">安全客</h1>
+<ul>
+<li><a href="https://www.anquanke.com/post/id/231177">247CTF的9个web题目分析</a></li>
+<li><a href="https://www.anquanke.com/post/id/217689">flask_caching中的pickle反序列化问题</a></li>
+</ul>
+<h1 id="sec-in">Sec-IN</h1>
+<ul>
+<li><a href="https://www.sec-in.com/article/141">php反序列化那些事</a></li>
+</ul>
+<h1 id="合天网安">合天网安</h1>
+<ul>
+<li><a href="https://mp.weixin.qq.com/s/NJyIdw73SVpq8cYmlbe25g">Vulnhub靶机Five86-2详细解析</a></li>
+<li><a href="https://mp.weixin.qq.com/s/3mO2tJeU8qyWJnyARX960w">Vulnhub靶机Five86-1详细解析</a></li>
+<li><a href="https://mp.weixin.qq.com/s/aPxB8SSMBNw-HwLZL5bmWA">HexionCTF web crypto misc题目分析</a></li>
+</ul>
+]]></content>
+    </entry>
+</feed>
